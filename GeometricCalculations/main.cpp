@@ -21,6 +21,7 @@ void DisplayMenu() {
                 cout << "Area of a Circle Selected" << endl;
                 cout << "Enter radius:" << endl;
                 cin >> radius;
+                radius = abs(radius);
                 cout << "Area of Circle with " << radius << " radius: " << calculateArea(radius) << " units squared." << endl;
                 break;
             }
@@ -29,6 +30,7 @@ void DisplayMenu() {
                 cout << "Perimeter of a Circle Selected" << endl;
                 cout << "Enter radius:" << endl;
                 cin >> radius;
+                radius = abs(radius);
                 cout << "Perimeter of Circle with " << radius << " radius: " << calculatePerimeter(radius) << " units." << endl;
                 break;
             }
@@ -37,8 +39,10 @@ void DisplayMenu() {
                 cout << "Area of a Rectangle Selected" << endl;
                 cout << "Enter Length:" << endl;
                 cin >> length;
+                length = abs(length);
                 cout << "Enter Width:" << endl;
                 cin >> width;
+                width = abs(width);
                 cout << "Area of Rectangle with " << length << " Length and " << width << " Width: " << calculateArea(length, width) << " units squared." << endl;
                 break;
             }
@@ -47,19 +51,25 @@ void DisplayMenu() {
                 cout << "Perimeter of a Rectangle Selected" << endl;
                 cout << "Enter Length:" << endl;
                 cin >> length;
+                length = abs(length);
                 cout << "Enter Width:" << endl;
                 cin >> width;
+                width = abs(width);
                 cout << "Perimeter of Rectangle with " << length << " Length and " << width << " Width: " << calculatePerimeter(length, width) << " units." << endl;
                 break;
             }
-            case 5: // end program case
+            case 5: {
+                // end program case
                 cout << "Quit" << endl;
                 break;
-            default: // default for invalid inputs
+            }
+            default: {
+                // default for invalid inputs
                 cout << "Invalid choice" << endl;
                 cin.clear();
                 cin.ignore();
                 break;
+            }
         }
     } while (choice != 5);
 }
